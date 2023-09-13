@@ -782,7 +782,7 @@ public class generateSQL {
       String eshopSpace = "', N'";
       String eshop2 = "', null, 1, NULL, 0, 0, 0, @user_setting, 1, NULL, NULL, NULL);";
       StringBuilder eshopUserAdmin = new StringBuilder();
-      eshopUserAdmin.append(eshop1).append(orgName.get(index.get())).append(eshopSpace).append(email.get(index.get()))
+      eshopUserAdmin.append(eshop1).append(s).append(eshopSpace).append(orgName.get(index.get())).append(eshopSpace).append(email.get(index.get()))
           .append(eshopSpace).append("cust-" + s).append(eshop2);
       System.out.println(eshopUserAdmin.toString());
 
