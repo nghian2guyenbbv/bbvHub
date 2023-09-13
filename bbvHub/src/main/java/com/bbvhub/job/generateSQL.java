@@ -727,7 +727,7 @@ public class generateSQL {
               + "VALUES(N'";
       String address2 = "', NULL, NULL, N'', NULL, N'";
       String address3 = "', N'";
-      String address4 = "', 1);";
+      String address4 = "', 1);\n SET @address_id = @@IDENTITY;\n";
       StringBuilder address = new StringBuilder();
       address.append(address1).append(line1.get(index.get())).append(address2).append(city.get(index.get()))
           .append(address3).append(zipcode.get(index.get())).append(address4);
@@ -745,7 +745,7 @@ public class generateSQL {
       String groupRole =
           "INSERT INTO GROUP_ROLE\n" + "(GROUP_ID, ROLE_ID)\n" + "VALUES(@admin_group_id, @admin_role);\n" + "\n"
               + "INSERT INTO ORGANISATION_GROUP\n" + "(GROUP_ID, ORGANISATION_ID)\n"
-              + "VALUES(@admin_group_id, @org_id);";
+              + "VALUES(@admin_group_id, @org_id); \n END \n";
       System.out.println(groupRole);
 
       String userEs1 = "IF (SELECT COUNT(ID)  from ESHOP_USER WHERE USERNAME = N'Agent-";
