@@ -727,7 +727,7 @@ public class generateSQL {
               + "VALUES(N'";
       String address2 = "', NULL, NULL, N'', NULL, N'";
       String address3 = "', N'";
-      String address4 = "', 1);";
+      String address4 = "', 1);\n SET @address_id = @@IDENTITY;\n";
       StringBuilder address = new StringBuilder();
       address.append(address1).append(line1.get(index.get())).append(address2).append(city.get(index.get()))
           .append(address3).append(zipcode.get(index.get())).append(address4);
