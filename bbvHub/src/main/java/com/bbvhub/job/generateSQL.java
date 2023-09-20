@@ -3969,7 +3969,7 @@ public class generateSQL {
     AtomicInteger i = new AtomicInteger();
     custs.forEach(s-> {
       i.getAndIncrement();
-      if (i.get()>=0 && i.get() <=500){
+      if (i.get()>500 && i.get() <=custs.size()){
         String declareSQL = "DECLARE @user_setting int\n" + "DECLARE @user_id int\n" + "DECLARE @admin_group_id int\n"
             + "DECLARE @hella_gutmann_collection int\n"
             + "SET @hella_gutmann_collection = (select ID from ORGANISATION_COLLECTION where SHORTNAME = 'hgs-at')\n"
